@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('participants', function (Blueprint $table) {
             $table->id();
+            $table->foreignUuid("sweepstake-id");
             $table->string('name');
             $table->string('email');
+            $table->dateTime('awarded_at')->nullable();
             $table->timestamps();
         });
     }
